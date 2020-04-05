@@ -14,10 +14,49 @@ import Footer from "./Components/Footer";
 import BBHotel from './Components/BBHotel'
 import BBKaraoke from './Components/BBKaraoke'
 import BBClub from './Components/BBClub'
-import ServicesContainer from './Containers/ServicesContainer';
 import BackBranchs from './Components/BackBranchs'
 import BackServices from './Components/BackServices'
+import BranchContainer from './Containers/BranchContainer';
+import ServicesContainer from './Containers/ServicesContainer';
 
+const menu = [
+   {
+     url: "/form",
+     name: "Get Hired!",
+     Component: FormContainer
+  },
+   {
+     url: "/services",
+     name: "Services",
+     Component: ServicesContainer
+  },
+    {
+      url: '/discount',
+      name: 'Discount',
+      Component: BackDiscount
+    },
+    {
+      url: '/contact',
+      name: 'Contact',
+      Component: BackContact
+    },
+    {
+      url: '/news-posts',
+      name: 'News',
+      Component: BackNewsContainer
+    }, 
+ 
+  {
+   url: '/about',
+   name: 'About',
+   Component: AboutContainer
+ },
+ {
+   url: "/",
+   name: "Home",
+   Component: HomeContainer
+    },
+ ];
 
 const data = [
   {
@@ -26,14 +65,14 @@ const data = [
     Component: FormContainer
  },
   {
-    url: "/service",
+    url: "/services",
     name: "Services",
-    Component: BackServices
+    Component: ServicesContainer
  },
  {
-   url: '/Branchs',
+   url: '/branchs',
    name: 'Branch',
-   Component: BackBranchs
+   Component: BranchContainer
  },
    {
      url: '/discount',
@@ -46,7 +85,7 @@ const data = [
      Component: BackContact
    },
    {
-     url: '/news',
+     url: '/news-posts',
      name: 'News',
      Component: BackNewsContainer
    }, 
@@ -63,53 +102,6 @@ const data = [
    },
 ];
 
-
-
-const datas = [
-   {
-      url: "/hotel",
-      name: "Hotel",
-      Component: BBHotel
-   },
-   {
-      url: "/Karaoke",
-      name: "Karaoke",
-      Component: BBKaraoke
-   },
-   {
-      url: "/Club",
-      name: "Club",
-      Component: BBClub
-   }
-];
-
-
-// {
-//   url: "/about",
-//   Name: "About",
-//   Component:
-// },
-// {
-//   url: "/services",
-//   Name: "Services"
-// },
-// {
-//   url: "/discount",
-//   Name: "Discount"
-// },
-// {
-//   url: "/blog",
-//   Name: "Blog"
-// },
-// {
-//   url: "/contact",
-//   Name: "Contact"
-// },
-
-
-
-
-
 axios.get('http://localhost:1337/articles').then((response)=> {
     console.log(response,'heey');
 })
@@ -118,7 +110,7 @@ function App() {
    return (
       <BrowserRouter>
          <div className="App">
-            <HeaderContainer data={data} />
+            <HeaderContainer data={menu} />
             <div style={{position: 'relative'}}>
                {data.map(({ url, Component }) => {
                   return (
@@ -130,9 +122,7 @@ function App() {
                               classNames="page"
                               unmountOnExit
                            >
-                              <div className="page">
                                  <Component />
-                              </div>
                            </CSSTransition>
                         )}
                      </Route>
@@ -140,7 +130,7 @@ function App() {
                })}
             </div>
          </div>
-          <Footer />
+          <Footer data={menu} />
       </BrowserRouter>
    );
 }

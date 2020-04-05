@@ -3,10 +3,13 @@ import { withRouter } from "react-router-dom";
 import {Container, Row, Col} from 'react-bootstrap'
 import NewsOther from "../Components/NewsOther";
 import NewsContent from '../Components/NewsContent';
+import axios from 'axios'
 
 class BackNewsContainer extends Component {
+
+   
+
    render() {
-      console.log(this.props, "hey");
       return (
          <Container className="inf" style={{marginBottom:"180px", marginTop:80}}>
             <Row className="Title">

@@ -21,10 +21,11 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
     "react-transition-group": "^4.3.0",
+    "slugify": "^1.4.0",
     "swiper": "^5.3.6"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts start && cd src/Style && sass --watch style.scss:style.css",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -43,5 +44,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "homepage": "./"
 }

@@ -9,7 +9,7 @@ class Branchs extends Component {
    };
 
    componentDidMount() {
-      axios.get("http://66.181.166.84:1337/branches-homes").then((Response) => {
+      axios.get("http://66.181.166.84:1338/home-branchs").then((Response) => {
          this.setState({
             branchs: Response.data
          });
@@ -27,18 +27,16 @@ class Branchs extends Component {
                   <h2>Branch</h2>
                </Col>
             </Row>
-            <Row>
+            <Row style={{justifyContent:'center'}}>
                {this.state.branchs.map(function(element, index) {
                   return (
                      <Col key={index} md={4} sm={6} xs={6}>
                         <div className="branch-child">
                            <div className="im">
-                           <img src={`http://66.181.166.84:1337${element.image.url}`}/>
+                           <img src={`http://66.181.166.84:1338${element.Image.url}`}/>
                            </div>
-                           <NavLink to="/branchs">
-                           <h5>{element.title}</h5>
-                           <p>{element.description}</p>
-                           </NavLink>
+                           <h5>{element.Title}</h5>
+                           <p>{element.Description}</p>
                         </div>
                      </Col>
                   );

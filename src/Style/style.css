@@ -57,9 +57,22 @@ body {
   visibility: hidden;
 }
 
-#Swiper img {
+#Swiper {
+  height: 100% !important;
+}
+#Swiper .swiper-pagination-bullet-active {
+  background: white;
+}
+#Swiper .swiper-container {
+  height: 100%;
+}
+#Swiper div {
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+#Swiper div img {
   width: 100%;
-  height: 750px;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -94,13 +107,15 @@ body {
 .Services .rel .abs {
   border-radius: 3px;
   position: absolute;
-  bottom: 41px;
-  left: 74px;
+  bottom: 15px;
+  left: 30px;
+  right: 30px;
   padding: 5px 40px;
   background-color: white;
   cursor: pointer;
 }
 .Services .rel .abs h4 {
+  color: black;
   font-family: "Montserrat", sans-serif;
 }
 .Services .rel .abs h4:hover {
@@ -233,6 +248,7 @@ body {
   font-size: 20px;
   text-decoration: none;
   color: #222222;
+  font-weight: bolder;
 }
 .news .haha h4:hover {
   cursor: pointer;
@@ -242,7 +258,8 @@ body {
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
   margin-bottom: 9px;
-  display: none;
+  height: 80px;
+  overflow: hidden;
 }
 .news .haha .date {
   font-size: 13px;
@@ -337,10 +354,6 @@ body {
     object-fit: cover;
   }
 
-  .row {
-    padding-bottom: 50px;
-  }
-
   .pa {
     padding: 60px 0px;
     position: relative;
@@ -414,10 +427,11 @@ body {
   cursor: pointer;
 }
 .inf .smNews .p {
-  font-size: 16px;
+  font-size: 20px;
+  font-weight: bolder;
   font-family: "Montserrat", sans-serif;
-  font-weight: 400;
   margin-top: 15px;
+  color: black;
 }
 .inf .smNews .p:hover {
   cursor: pointer;
@@ -615,7 +629,7 @@ body {
   background: black;
   position: absolute;
   top: 0;
-  right: calc(50% - 1px);
+  right: calc(50% - 2px);
 }
 #About-con .rightside div:nth-child(odd):before {
   content: "";
@@ -716,6 +730,144 @@ body {
 .footParent .svg svg:hover {
   cursor: pointer;
   color: #0066ff;
+}
+
+.ServiceCon {
+  width: 100%;
+  height: calc(100vh - 125px);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.ServiceCon a {
+  text-decoration: none;
+  color: black;
+}
+.ServiceCon .effect {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.ServiceCon .effect .line {
+  height: 1px;
+  width: 100%;
+  background-color: black;
+  margin: 5vh 0px;
+}
+.ServiceCon .effect h2 {
+  font-size: 4vw;
+  font-family: Montserrat;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 5vh;
+}
+.ServiceCon .effect p {
+  margin-bottom: 5vh;
+}
+.ServiceCon .effect button {
+  padding: 2vh 5vw;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  border: 1px solid black;
+  margin: 0px auto;
+  display: block;
+}
+
+#BranchContainer .line {
+  height: 2px;
+  width: 100%;
+  background-color: white;
+}
+#BranchContainer .background.empty {
+  height: 200px;
+}
+#BranchContainer .background {
+  height: 500px;
+  width: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#BranchContainer .background .effect {
+  height: 100%;
+}
+#BranchContainer .background .effect div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+#BranchContainer .background .effect div h2 {
+  text-transform: uppercase;
+  font-family: Montserrat;
+  padding: 20px 100px;
+  color: black;
+}
+#BranchContainer .background .effect div p svg {
+  opacity: 0.8;
+}
+#BranchContainer .background .effect div p svg:first-child {
+  margin-right: 15px;
+}
+#BranchContainer .background .effect div p svg:last-child {
+  margin-left: 15px;
+}
+#BranchContainer .branch .row .back {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#BranchContainer .branch .row .back .overflow {
+  padding: 30px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+#BranchContainer .branch .row .back .overflow .content {
+  overflow: hidden;
+  height: 100%;
+  color: white;
+}
+#BranchContainer .branch .row .back .overflow .content h2 {
+  margin-bottom: 25px;
+}
+#BranchContainer .branch .row .back .overflow .content .feature-con {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#BranchContainer .branch .row .back .overflow .content .feature-con .feature {
+  padding: 30px;
+  margin: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  min-width: 200px;
+}
+#BranchContainer .branch .row .back .overflow .content .feature-con .feature div {
+  margin-bottom: 15px;
+}
+#BranchContainer .branch .row .back .overflow .content .feature-con .feature div svg, #BranchContainer .branch .row .back .overflow .content .feature-con .feature div img {
+  display: block;
+  margin: 0px auto;
+  width: 35px;
+  height: 35px;
+  font-size: 35px;
+  text-align: center;
+}
+#BranchContainer .branch .row .col-md-6 {
+  flex-direction: column;
+}
+#BranchContainer .branch .row.white .overflow {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+#BranchContainer .branch .row.white .overflow .content {
+  color: black;
+}
+#BranchContainer .branch .row.white .overflow .content .feature {
+  border: 1px solid rgba(0, 0, 0, 0.2) !important;
 }
 
 @media only screen and (max-width: 800px) {
@@ -906,15 +1058,14 @@ body {
   object-fit: cover;
 }
 .BBHotel .texts {
-  border: 0.1px solid rgba(0, 0, 0, 0.5);
-  border-radius: 6px 6px 6px 6px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
   position: absolute;
   top: 258px;
   left: 270px;
   z-index: 1;
   width: 50% !important;
-  background-color: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.4), 0 8px 20px 0 rgba(0, 0, 0, 0.35);
+  background-color: white;
 }
 .BBHotel .texts:hover {
   cursor: pointer;
@@ -971,11 +1122,12 @@ body {
   background-attachment: fixed;
   z-index: -1;
   padding-bottom: 1px;
+  height: 100%;
 }
 .BackService .borders {
   height: 100%;
-  border: solid 1px rgba(0, 0, 0, 0.4);
-  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.4), 0 8px 20px 0 rgba(0, 0, 0, 0.35);
+  border: solid 1px rgba(0, 0, 0, 0.1);
+  padding: 20px 15px;
   width: 90%;
   margin-left: 14px;
 }
@@ -992,4 +1144,4 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
-/*# sourceMappingURL=Style.css.map */
+/*# sourceMappingURL=style.css.map */

@@ -14,7 +14,7 @@ class BackContact extends Component {
     }
 
     componentDidMount() {
-        axios('http://66.181.166.84:1337/contact').then((Response) => {
+        axios('http://66.181.166.84:1338/contact-info').then((Response) => {
             // console.log(Response, 'contact irlee')
             this.setState({
                 contact: Response.data
@@ -42,14 +42,14 @@ class BackContact extends Component {
                                         <MdCall />
                                     </div>
                                     <h5>Оффисийн дугааp</h5>
-                                          <p>{this.state.contact.phoneNumber}</p>
+                                          <p>{this.state.contact.Phone}</p>
                                 </li>
                                 <li>
                                     <div className="icon">
                                         <MdLocationOn />
                                     </div>
                                     <h5>Цагийн хуваарь</h5>
-                                    <p>{this.state.contact.Datetime}</p>
+                                    <p>{this.state.contact.Timetable}</p>
                                 </li>
                                 <li>
                                     <div className="icon">

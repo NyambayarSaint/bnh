@@ -11,22 +11,22 @@ import BBHotel from '../Components/BBHotel'
 import BBKaraoke from '../Components/BBKaraoke'
 import BBClub from '../Components/BBClub'
 
-let data = []
-axios.get('http://66.181.166.84:1337/slider-homes').then((Response) => {
-    data = Response.data
-})
-
 class HomeContainer extends Component {
 
-    componentWillMount(){
-        axios.get('http://66.181.166.84:1337/slider-homes').then((Response) => {
+    state = {
+        sliders: []
+    }
+
+    componentWillMount() {
+        axios.get('http://66.181.166.84:1338/home-sliders').then((Response) => {
             this.setState({ sliders: Response.data })
         })
     }
+
     render() {
         return (
             <div id="HomeContainer">
-                <Slider sliders={data} />
+                <Slider sliderHeight={{height: "calc(100vh - 10vw)"}} sliders={this.state.sliders} />
                 <Services />
                 <OverVision />
                 <Branchs/>

@@ -18,7 +18,7 @@ class BackDiscount extends Component {
       return num % 2;
    }
    componentDidMount() {
-      axios.get("http://66.181.166.84:1337/uramshuulals").then((response) => {
+      axios.get("http://66.181.166.84:1338/discounts").then((response) => {
          console.log(response, "heheh");
          this.setState({
             // title : response.data.title,
@@ -64,32 +64,20 @@ class BackDiscount extends Component {
                                     marginLeft: 30
                                  }}
                               >
-                                 <h4>{el.title}</h4>
+                                 <h4>{el.Title}</h4>
                                  <p style={{ marginBottom: "10px" }}>
-                                    {el.description}
+                                    {el.Description}
                                  </p>
                                  <p className="date">{el.date}</p>
                                  <div class="button_cont" align="center">
-                                    <FaHandPointRight
-                                       style={{
-                                          fontSize: 30,
-                                          color: "DarkOrange"
-                                       }}
-                                    />
-                                    <a class="butt">Захиалах</a>
-                                    <FaHandPointLeft
-                                       style={{
-                                          fontSize: 30,
-                                          color: "DarkOrange"
-                                       }}
-                                    />
+                                    <a class="butt" target="_blank" href={`${el.Link?el.Link:'javascript:;'}`}>Дэлгэрэнгүй</a>
                                     <div className="icons"></div>
                                  </div>
                               </div>
                            </Col>
                            <Col id="Pleft" md={6}>
                               <img
-                                 src={`http://66.181.166.84:1337${el.image.url}`}
+                                 src={`http://66.181.166.84:1338${el.Image.url}`}
                               />
                            </Col>
                         </Row>
@@ -103,7 +91,7 @@ class BackDiscount extends Component {
                            <Col id="Pleft" md={6} style={{paddingRight:0}}>
                               <div id="imge">
                               <img
-                                 src={`http://66.181.166.84:1337${el.image.url}`}
+                                 src={`http://66.181.166.84:1338${el.Image.url}`}
                               />
                               </div>
                               
@@ -124,25 +112,13 @@ class BackDiscount extends Component {
                                     marginLeft: 30
                                  }}
                               >
-                                 <h4>{el.title}</h4>
+                                 <h4>{el.Title}</h4>
                                  <p style={{ marginBottom: "10px" }}>
-                                    {el.description}
+                                    {el.Description}
                                  </p>
                                  <p className="date">{el.date}</p>
                                  <div class="button_cont" align="center">
-                                    <FaHandPointRight
-                                       style={{
-                                          fontSize: 30,
-                                          color: "DarkOrange"
-                                       }}
-                                    />
-                                    <a class="butt">Захиалах</a>
-                                    <FaHandPointLeft
-                                       style={{
-                                          fontSize: 30,
-                                          color: "DarkOrange"
-                                       }}
-                                    />
+                                    <a class="butt">Дэлгэрэнгүй</a>
                                     <div className="icons"></div>
                                  </div>
                               </div>
