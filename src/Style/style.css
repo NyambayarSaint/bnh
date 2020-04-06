@@ -589,7 +589,7 @@ body {
 #About-con .leftside h1 {
   font-family: "Montserrat";
   font-weight: bold;
-  font-size: 4.5vw;
+  font-size: 3.3vw;
 }
 #About-con .leftside .line {
   height: 2px;
@@ -686,7 +686,7 @@ body {
 }
 
 .footParent {
-  background-color: #181a1f;
+  background-color: #131b24;
   padding-top: 40px;
 }
 .footParent .footer {
@@ -707,29 +707,50 @@ body {
 }
 .footParent h5 {
   font-size: 20px;
-  padding-bottom: 18px;
   color: white;
 }
 .footParent .branchs p {
-  padding-left: 40px;
-}
-.footParent .branchs h5 {
-  padding-left: 40px;
+  font-size: 14px;
 }
 .footParent .menu2 p {
-  padding-left: 40px;
+  padding-left: 10px;
 }
 .footParent .menu2 h5 {
-  padding-left: 40px;
+  padding-left: 10px;
 }
-.footParent .svg svg {
-  margin-left: 20px;
-  font-size: 32px;
+.footParent .svgg {
+  font-size: 30px;
+  padding-right: 5px;
+  border-radius: 50%;
+  background-color: #01112b;
+  color: #0066ff;
+}
+.footParent .svg {
+  align-items: center;
+  margin-left: 15px;
+  padding: 6px 6px;
+  font-size: 50px;
   color: white;
+  border-radius: 20%;
+  background-color: #172331;
+  margin-top: 10px;
 }
-.footParent .svg svg:hover {
+.footParent .svg:hover {
   cursor: pointer;
   color: #0066ff;
+}
+.footParent .line {
+  height: 2px;
+  width: 80%;
+  background-color: white;
+  margin-bottom: 10px;
+  margin-top: 0px;
+}
+.footParent .lines {
+  height: 2px;
+  width: 100%;
+  background-color: rgba(50, 0, 0, 0.3);
+  margin-bottom: 18px;
 }
 
 .ServiceCon {
@@ -759,14 +780,16 @@ body {
   margin: 5vh 0px;
 }
 .ServiceCon .effect h2 {
-  font-size: 4vw;
+  font-size: 3.1vw;
   font-family: Montserrat;
   text-transform: uppercase;
   text-align: center;
   margin-bottom: 5vh;
 }
 .ServiceCon .effect p {
-  margin-bottom: 5vh;
+  margin-bottom: 6vh;
+  text-align: center;
+  font-size: 18px;
 }
 .ServiceCon .effect button {
   padding: 2vh 5vw;
@@ -870,24 +893,28 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.2) !important;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 770px) {
   .footParent .branchs {
     display: none;
   }
   .footParent .branchs p {
-    padding-left: 80px;
+    padding-left: 60px;
   }
   .footParent .branchs h5 {
     padding-left: 60px;
+  }
+  .footParent .line {
+    width: 50%;
+    margin-left: 75px;
   }
   .footParent .menu2 {
     display: none;
   }
   .footParent .menu2 p {
-    padding-left: 80px;
+    padding-left: 60px;
   }
   .footParent .menu2 h5 {
-    padding-left: 60px;
+    padding-left: 50px;
   }
   .footParent p {
     padding-left: 80px;
@@ -896,9 +923,7 @@ body {
     padding-left: 80px;
   }
   .footParent .svg {
-    padding-top: 20px;
-    padding-left: 80px;
-    padding-bottom: 20px;
+    margin-left: 50px;
   }
 }
 .contact .rightside h2 {

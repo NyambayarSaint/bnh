@@ -34,7 +34,7 @@ export class HeaderContainer extends Component {
                      <Col xs={2}>
                         <div className="img-con">
                            <NavLink to="/">
-                              <img src={require("../img/logo.png")} />
+                              <img src={require("../img/logo1.png")} />
                            </NavLink>
                         </div>
                      </Col>
