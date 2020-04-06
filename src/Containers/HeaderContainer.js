@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import HamburgerMenu from 'react-hamburger-menu';
+import Axios from "axios";
 
 export class HeaderContainer extends Component {
    constructor(props) {
@@ -11,7 +12,8 @@ export class HeaderContainer extends Component {
 
       this.state = {
          menu: <p></p>,
-         open: false
+         open: false,
+         logoP: []
       };
    }
 
@@ -22,6 +24,11 @@ export class HeaderContainer extends Component {
    }
 
    componentDidUpdate() {
+      Axios.get('http://66.181.166.84:1338/contact-info').then((resp) => {
+         this.setState({
+            logoP : resp.data
+         })
+      }) 
       console.log(this.state.open, 'state')
    }
 

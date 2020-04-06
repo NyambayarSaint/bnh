@@ -40,7 +40,7 @@ class NewsContent extends Component {
                 <div className="image">
                     <img className="this" src={`http://66.181.166.84:1338${this.state.news.Image.url}`} />
                 </div>
-                <div>
+                <div className="big">
                     <h4>{this.state.news.Title}</h4>
                     <p>{this.state.news.Content}</p>
                     <p className="date">{new Date(this.state.news.createdAt).toISOString()}</p>

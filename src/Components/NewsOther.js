@@ -32,7 +32,7 @@ export class NewsOther extends Component {
                   return <div key={i} >
                      <Row className="smNews">
                         <a href={`/news-posts?Slug=${el.Slug}`}>
-                           <Col md={8} sm={8} xs={8} style={{ paddingRight: 0 }}>
+                           <Col className="over" md={8} sm={8} xs={8} style={{ paddingRight: 0 }}>
                               <h4 className="p">
                                  {el.Title}
                               </h4>

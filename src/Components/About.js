@@ -45,8 +45,8 @@ class About extends Component {
 
                             {this.state.histories.map((el, i) => {
                                 return <div key={i}>
-                                    <h5>{el.Title}</h5>
                                     <img src={`http://66.181.166.84:1338${el.Image.url}`} />
+                                    <h5>{el.Title}</h5>
                                     <p>{el.Description}</p>
                                 </div>
                             })}
