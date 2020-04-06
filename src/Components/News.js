@@ -36,7 +36,7 @@ class News extends Component {
                                     <Col md={8} sm={8} xs={8}>
                                         <div style={{ padding: '5px 0px' }}>
                                             <NavLink to={`/news-posts?Slug=${el.Slug}`}>
-                                                <h4 >{el.Title}</h4>
+                                                <h4  >{el.Title}</h4>
                                             </NavLink>
                                             <p>{el.Content}</p>
                                             <p className="date">{new Date(el.createdAt).toISOString()}</p>
