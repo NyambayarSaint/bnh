@@ -364,6 +364,7 @@ body{
                 height: 110px;
                 object-fit: cover;
             }
+            
         }
         a{
             text-decoration: none;
@@ -395,6 +396,20 @@ body{
         }
     }
 }
+
+.tilt {
+    font-size: 28px;
+    font-weight: 580;
+    font-family: $myFontFamily;
+}
+.tiltLine{
+    height: 3px;
+    width: 100%;
+    background-color: #051539;
+    margin-bottom: 5px;
+}
+
+
 
 @media only screen and (max-width: 800px) {
     .news {
@@ -530,29 +545,40 @@ body{
 
 .inf {
     .Title{
-        padding: 40px 0px;
+        text-align: center;
+        margin-bottom: 90px;
         justify-content: center;
         h2{
             color: $myFontColor;
             font-family: $myFontFamily;
-            padding-bottom: 20px;
+            padding-bottom: 10px;
+            font-size: 40px;
         }
         .line {
-            height: 2px;
+            height: 1px;
             width: 100%;
-            background-color: black;
+            background-color: rgba(0, 0, 0, 0.4);
         }
     }
     .image {
-
         .this{
             width: 100%;
         }
+        .date {
+            display: flex;
+            justify-content: flex-end;
+            font-size: 14px;
+            margin-bottom: 0px;
+        }
     }
     .big{
-        h4{
-            padding: 10px 0px;
+        p{
+            text-indent: 2em;
+            padding-top: 22px;
+            margin: 16x 0px 16px 0px;
+            line-height: 1.7;
         }
+        
     }
     h4{
         padding: 0px 5px;
@@ -567,23 +593,25 @@ body{
     .Stitle{
         float: left;
         font-family: $myFontFamily;
-        font-weight: 600;
-        width: 40%;
+        font-weight: 500;
+        font-size: 20px;
+        align-items: center;
+        margin-bottom: 5px;
     }
 
     .lines {
         float: right;
-        height: 1px;
-        width: 55%;
-        background-color: black;
-        margin-top: 9px;
-
+        height: 3px;
+        width: 100%;
+        background-color: #051539;
     }
 
     .smNews {
-        padding: 10px 5px;
+        padding-top: 16px;
+        padding-bottom: 10px;
         border-bottom: 1px solid rgba(50,0,0, 0.3);
         .dad{
+            padding-right: 0px;
             img{
                 width: 100%;
                 height: 100px;
@@ -596,24 +624,26 @@ body{
        .over{
            overflow: hidden;
         .p{
+            font-weight: 550;
+            padding-left: 0px;
             font-size: 16px;
-            font-weight: bolder;
             font-family: $myFontFamily;
-            margin-top: 5px;
             color:black;
+            overflow: hidden;
+            height: 80px;
             &:hover{
                 cursor: pointer;
                 color: #1a3f86;
             }
         }
-       }
-        
         .date {
-            padding-right: 9px;
             font-size: 13px;
             color: rgba(0,0,0, 0.7);
-            float: right;
+            margin-bottom: 0px;
         }
+       }
+        
+       
         
         
     }
@@ -626,6 +656,20 @@ body{
         }
     }
 }
+
+
+@media only screen and (max-width: 800px) {
+    .inf {
+        .smNews{
+            img{
+                height: 100px;
+                width: 80%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
 
 
 .contact {
@@ -1024,7 +1068,6 @@ body{
         }
         p{
             margin-bottom: 6vh;
-            text-align: center;
             font-size: 18px;
         }
         button{

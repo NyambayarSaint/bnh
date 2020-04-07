@@ -276,6 +276,19 @@ body {
   color: rgba(0, 0, 0, 0.8);
 }
 
+.tilt {
+  font-size: 28px;
+  font-weight: 580;
+  font-family: "Montserrat", sans-serif;
+}
+
+.tiltLine {
+  height: 3px;
+  width: 100%;
+  background-color: #051539;
+  margin-bottom: 5px;
+}
+
 @media only screen and (max-width: 800px) {
   .news .haha {
     height: 300px;
@@ -386,24 +399,35 @@ body {
   }
 }
 .inf .Title {
-  padding: 40px 0px;
+  text-align: center;
+  margin-bottom: 90px;
   justify-content: center;
 }
 .inf .Title h2 {
   color: #222222;
   font-family: "Montserrat", sans-serif;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
+  font-size: 40px;
 }
 .inf .Title .line {
-  height: 2px;
+  height: 1px;
   width: 100%;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 .inf .image .this {
   width: 100%;
 }
-.inf .big h4 {
-  padding: 10px 0px;
+.inf .image .date {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 14px;
+  margin-bottom: 0px;
+}
+.inf .big p {
+  text-indent: 2em;
+  padding-top: 22px;
+  margin: 16x 0px 16px 0px;
+  line-height: 1.7;
 }
 .inf h4 {
   padding: 0px 5px;
@@ -417,19 +441,24 @@ body {
 .inf .Stitle {
   float: left;
   font-family: "Montserrat", sans-serif;
-  font-weight: 600;
-  width: 40%;
+  font-weight: 500;
+  font-size: 20px;
+  align-items: center;
+  margin-bottom: 5px;
 }
 .inf .lines {
   float: right;
-  height: 1px;
-  width: 55%;
-  background-color: black;
-  margin-top: 9px;
+  height: 3px;
+  width: 100%;
+  background-color: #051539;
 }
 .inf .smNews {
-  padding: 10px 5px;
+  padding-top: 16px;
+  padding-bottom: 10px;
   border-bottom: 1px solid rgba(50, 0, 0, 0.3);
+}
+.inf .smNews .dad {
+  padding-right: 0px;
 }
 .inf .smNews .dad img {
   width: 100%;
@@ -443,21 +472,22 @@ body {
   overflow: hidden;
 }
 .inf .smNews .over .p {
+  font-weight: 550;
+  padding-left: 0px;
   font-size: 16px;
-  font-weight: bolder;
   font-family: "Montserrat", sans-serif;
-  margin-top: 5px;
   color: black;
+  overflow: hidden;
+  height: 80px;
 }
 .inf .smNews .over .p:hover {
   cursor: pointer;
   color: #1a3f86;
 }
-.inf .smNews .date {
-  padding-right: 9px;
+.inf .smNews .over .date {
   font-size: 13px;
   color: rgba(0, 0, 0, 0.7);
-  float: right;
+  margin-bottom: 0px;
 }
 .inf .parentLine .linese {
   width: 100%;
@@ -465,6 +495,13 @@ body {
   background-color: black;
 }
 
+@media only screen and (max-width: 800px) {
+  .inf .smNews img {
+    height: 100px;
+    width: 80%;
+    object-fit: cover;
+  }
+}
 .contact .cont h2 {
   padding-left: 40px;
   padding-bottom: 30px;
@@ -807,7 +844,6 @@ body {
 }
 .ServiceCon .effect p {
   margin-bottom: 6vh;
-  text-align: center;
   font-size: 18px;
 }
 .ServiceCon .effect button {

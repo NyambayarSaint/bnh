@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import Service from '../Components/Service';
 import Swiper from 'react-id-swiper';
 import axios from 'axios';
-import {withRouter} from 'react-router-dom'
+import {withRouter, NavLink} from 'react-router-dom'
+import Markdown from 'react-markdown'
 
 class ServicesContainer extends Component {
 
@@ -26,17 +27,17 @@ class ServicesContainer extends Component {
                         {this.state.sliders.map((el, i) => {
                             return (
                                 <div key={i} className="ServiceCon" style={{ backgroundImage: `url(http://66.181.166.84:1338${el.Background.url})` }}>
-                                    <a href={`/branchs?Slug=${el.Slug}`}>
+                                    <NavLink to={`/branchs?Slug=${el.Slug}`}>
                                         <div className="effect">
                                             <div className="container">
                                                 <div className="line"></div>
                                                 <h2>{el.Name}</h2>
-                                                <p>{el.Description}</p>
+                                                <p><Markdown source={el.Description}/></p>
                                                 <button>Дэлгэрэнгүй</button>
                                                 <div className="line"></div>
                                             </div>
                                         </div>
-                                    </a>
+                                    </NavLink>
                                 </div>
                             )
                         })}

@@ -6,6 +6,7 @@ import axios from 'axios'
 import { IoIosMan } from 'react-icons/io'
 import { FaQuoteRight, FaQuoteLeft } from 'react-icons/fa'
 import { withRouter } from 'react-router-dom'
+import Markdown from 'react-markdown'
 
 class Service extends Component {
 
@@ -45,7 +46,7 @@ class Service extends Component {
                     <div className="effect container" style={{ backgroundColor: 'rgba(255,255,255,0.5)' }}>
                         <div>
                             <h2>{this.state.data.Name}</h2>
-                            <p><FaQuoteLeft /> {this.state.data.Description} <FaQuoteRight /></p>
+                            <p><Markdown source={this.state.data.Description} /></p>
                         </div>
                     </div>
                 </div>

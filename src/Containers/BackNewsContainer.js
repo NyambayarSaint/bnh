@@ -4,6 +4,7 @@ import {Container, Row, Col} from 'react-bootstrap'
 import NewsOther from "../Components/NewsOther";
 import NewsContent from '../Components/NewsContent';
 import axios from 'axios'
+import BackNews from "../Components/BackNews";
 
 class BackNewsContainer extends Component {
 
@@ -19,8 +20,11 @@ class BackNewsContainer extends Component {
                </Col>
             </Row>
             <Row>
+
+               {/* <BackNews /> */}
                 <NewsContent />
-               <NewsOther props={this.props} data={data}/>
+            <NewsOther props={this.props} data={data}/>
+
             </Row>
          </Container>
       );

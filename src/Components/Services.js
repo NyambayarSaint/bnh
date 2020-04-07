@@ -28,12 +28,12 @@ class Services extends Component {
                         return (
                             <Col key={i} md={4} sm={12} xs={12} style={{ paddingBottom: 30 }}>
                                 <div className="rel">
-                                    <a href={`/branchs?Slug=${el.Slug}`}>
+                                    <NavLink to={`/branchs?Slug=${el.Slug}`}>
                                         <img src={`http://66.181.166.84:1338${el.Background.url}`} />
                                         <div className="abs">
                                             <h4>{el.Name}</h4>
                                         </div>
-                                    </a>
+                                    </NavLink>
                                 </div>
                             </Col>
                         )

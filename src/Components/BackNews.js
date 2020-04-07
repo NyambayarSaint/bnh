@@ -1,25 +1,23 @@
-import React, { Component } from "react";
+import React, { Component } from 'react'
 import { Col, Row } from 'react-bootstrap'
 import axios from 'axios'
-import {NavLink} from 'react-router-dom'
 
-export class NewsOther extends Component {
+export class BackNews extends Component {
 
-   state = {
-      news: []
-   }
-
-   componentWillMount() {
-      axios.get('http://66.181.166.84:1338/news-posts').then((res) => {
-         this.setState({ news: res.data })
-      })
-   }
-
-   render() {
-      console.log(this.state.news, 'fkewjjki')
-      return (
-            <Col md={4} >
-            <Row style={{marginTop:78}}>
+    state = {
+        news: []
+     }
+  
+     componentWillMount() {
+        axios.get('http://66.181.166.84:1338/news-posts').then((res) => {
+           this.setState({ news: res.data })
+        })
+     }
+    render() {
+        return (
+            <div>
+                <Col md={4} sm={12} xs={12} >
+            <Row>
                <Col>
                   <div>
                      <p className="Stitle">LATEST NEWS</p>
@@ -32,26 +30,25 @@ export class NewsOther extends Component {
                {this.state.news.map((el, i) => {
                   return <div key={i} >
                      <Row className="smNews">
-                        <NavLink to={`/news-posts?Slug=${el.Slug}`}>
-                           
-                           <Col md={4} sm={4} xs={4} className="dad">
-                              <img src={`http://66.181.166.84:1338${el.Image.url}`} />
-                           </Col>
+                        <a href={`/news-posts?Slug=${el.Slug}`}>
                            <Col className="over" md={8} sm={8} xs={8} style={{ paddingRight: 0 }}>
                               <h4 className="p">
                                  {el.Title}
                               </h4>
                               <p className="date">{new Date(el.createdAt).toISOString()}</p>
                            </Col>
-                        </NavLink>
+                           <Col md={4} sm={4} xs={4} className="dad">
+                              <img src={`http://66.181.166.84:1338${el.Image.url}`} />
+                           </Col>
+                        </a>
                      </Row>
                   </div>
                })}
             </div>
          </Col>
-         
-      );
-   }
+            </div>
+        )
+    }
 }
 
-export default NewsOther;
+export default BackNews
