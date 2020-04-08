@@ -1,136 +1,81 @@
 import React from "react";
 import "./Style/style.css";
 import HeaderContainer from "./Containers/HeaderContainer";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import HomeContainer from "./Containers/HomeContainer";
 import FormContainer from "./Containers/FormContainer";
 import { CSSTransition } from "react-transition-group";
-import BackDiscount from './Components/BackDiscount'
+import BackDiscount from "./Components/BackDiscount";
 import BackContact from "./Components/BackContact";
-import axios from 'axios';
+import axios from "axios";
 import BackNewsContainer from "./Containers/BackNewsContainer";
-import AboutContainer from './Containers/AboutContainer'
+import AboutContainer from "./Containers/AboutContainer";
 import Footer from "./Components/Footer";
-import BBHotel from './Components/BBHotel'
-import BBKaraoke from './Components/BBKaraoke'
-import BBClub from './Components/BBClub'
-import BackBranchs from './Components/BackBranchs'
-import BackServices from './Components/BackServices'
-import BranchContainer from './Containers/BranchContainer';
-import ServicesContainer from './Containers/ServicesContainer';
+import BBHotel from "./Components/BBHotel";
+import BBKaraoke from "./Components/BBKaraoke";
+import BBClub from "./Components/BBClub";
+import BackBranchs from "./Components/BackBranchs";
+import BackServices from "./Components/BackServices";
+import BranchContainer from "./Containers/BranchContainer";
+import ServicesContainer from "./Containers/ServicesContainer";
+import Error404 from "./Components/Error404";
 
 const menu = [
    {
-     url: "/form",
-     name: "Get Hired!",
-     Component: FormContainer
-  },
-   {
-     url: "/services",
-     name: "Services",
-     Component: ServicesContainer
-  },
-    {
-      url: '/discount',
-      name: 'Discount',
-      Component: BackDiscount
-    },
-    {
-      url: '/contact',
-      name: 'Contact',
-      Component: BackContact
-    },
-    {
-      url: '/news-posts',
-      name: 'News',
-      Component: BackNewsContainer
-    }, 
- 
-  {
-   url: '/about',
-   name: 'About',
-   Component: AboutContainer
- },
- {
-   url: "/",
-   name: "Home",
-   Component: HomeContainer
-    },
- ];
-
-const data = [
-  {
-    url: "/form",
-    name: "Get Hired!",
-    Component: FormContainer
- },
-  {
-    url: "/services",
-    name: "Services",
-    Component: ServicesContainer
- },
- {
-   url: '/branchs',
-   name: 'Branch',
-   Component: BranchContainer
- },
-   {
-     url: '/discount',
-     name: 'Discount',
-     Component: BackDiscount
+      url: "/form",
+      name: "Get Hired!"
    },
    {
-     url: '/contact',
-     name: 'Contact',
-     Component: BackContact
+      url: "/services",
+      name: "Services"
    },
    {
-     url: '/news-posts',
-     name: 'News',
-     Component: BackNewsContainer
-   }, 
+      url: "/discount",
+      name: "Discount"
+   },
+   {
+      url: "/contact",
+      name: "Contact"
+   },
+   {
+      url: "/news-posts",
+      name: "News"
+   },
 
- {
-  url: '/about',
-  name: 'About',
-  Component: AboutContainer
-},
-{
-  url: "/",
-  name: "Home",
-  Component: HomeContainer
+   {
+      url: "/about",
+      name: "About"
+   },
+   {
+      url: "/",
+      name: "Home"
    },
 ];
 
-axios.get('http://localhost:1337/articles').then((response)=> {
-    console.log(response,'heey');
-})
+axios.get("http://localhost:1337/articles").then((response) => {
+   console.log(response, "heey");
+});
 
 function App() {
    return (
       <BrowserRouter>
          <div className="App">
             <HeaderContainer data={menu} />
-            <div style={{position: 'relative'}}>
-               {data.map(({ url, Component }) => {
-                  return (
-                     <Route key={url} exact path={url}>
-                        {({ match }) => (
-                           <CSSTransition
-                              in={match != null}
-                              timeout={300}
-                              classNames="page"
-                              unmountOnExit
-                           >
-                                 <Component />
-                           </CSSTransition>
-                        )}
-                     </Route>
-                  );
-               })}
+            <div style={{ position: "relative" }}>
+               <Switch>
+                  <Route path="/" exact component={HomeContainer} />
+                  <Route path="/about" exact component={AboutContainer} />
+                  <Route path="/news-posts" exact component={BackNewsContainer} />
+                  <Route path="/contact" exact component={BackContact} />
+                  <Route path="/discount" exact component={BackDiscount} />
+                  <Route path="/branchs" exact component={BranchContainer} />
+                  <Route path="/services" exact component={ServicesContainer} />
+                  <Route path="/form" exact component={FormContainer} />
+                  <Route component={Error404} />
+               </Switch>
             </div>
          </div>
-          <Footer data={menu} />
+         <Footer data={menu} />
       </BrowserRouter>
    );
 }

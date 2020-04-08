@@ -16,7 +16,7 @@ export class NewsOther extends Component {
    }
 
    render() {
-      console.log(this.state.news, 'fkewjjki')
+      console.log(this.props, 'zam')
       return (
             <Col md={4} >
             <Row style={{marginTop:78}}>
@@ -33,7 +33,6 @@ export class NewsOther extends Component {
                   return <div key={i} >
                      <Row className="smNews">
                         <NavLink to={`/news-posts?Slug=${el.Slug}`}>
-                           
                            <Col md={4} sm={4} xs={4} className="dad">
                               <img src={`http://66.181.166.84:1338${el.Image.url}`} />
                            </Col>
