@@ -15,7 +15,6 @@ class BackContact extends Component {
 
     componentDidMount() {
         axios('http://66.181.166.84:1338/contact-info').then((Response) => {
-            // console.log(Response, 'contact irlee')
             this.setState({
                 contact: Response.data
             })

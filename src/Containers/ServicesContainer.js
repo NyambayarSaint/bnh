@@ -18,9 +18,7 @@ class ServicesContainer extends Component {
     }
 
     render() {
-        console.log(this.props,'hehe')
         if (this.state.sliders.length) {
-            console.log(this.state.sliders, 'here')
             return (
                 <div id="Swiper">
                     <Swiper {...params}>
@@ -32,7 +30,7 @@ class ServicesContainer extends Component {
                                             <div className="container">
                                                 <div className="line"></div>
                                                 <h2>{el.Name}</h2>
-                                                <p><Markdown source={el.Description}/></p>
+                                                <div className="content"><Markdown source={el.Description}/></div>
                                                 <button>Дэлгэрэнгүй</button>
                                                 <div className="line"></div>
                                             </div>

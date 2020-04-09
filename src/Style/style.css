@@ -1,6 +1,7 @@
 body {
   color: #222222;
   height: 100%;
+  overflow-x: hidden !important;
 }
 
 #ParentBack {
@@ -448,9 +449,9 @@ body {
 }
 .inf .lines {
   float: right;
-  height: 3px;
+  height: 1px;
   width: 100%;
-  background-color: #051539;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 .inf .smNews {
   padding-top: 16px;
@@ -721,6 +722,46 @@ body {
 @media only screen and (max-width: 800px) {
   #About-con .rightside div h5 {
     font-size: 3.7vw;
+  }
+
+  .icons-conn {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+  }
+  .icons-conn svg {
+    margin: 0px !important;
+  }
+
+  .mobil-p {
+    padding: 0px !important;
+    margin: 0px auto !important;
+    padding-top: 20px;
+    text-align: center;
+  }
+
+  .bnh-text {
+    padding: 0px !important;
+    margin: 0px auto !important;
+    width: 100%;
+  }
+
+  .Flogo {
+    padding: 0px !important;
+    margin: 0px !important;
+  }
+  .Flogo img {
+    text-align: center;
+  }
+
+  .footer .right .we {
+    padding: 0px !important;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .footer .right .we svg {
+    display: block;
+    margin: 0px auto !important;
   }
 }
 /* width */
@@ -1222,6 +1263,70 @@ body {
 }
 .BackService .borders p {
   font-family: "Montserrat", sans-serif;
+}
+
+.news-content img {
+  width: 100%;
+  margin-left: -30px;
+}
+
+@media only screen and (max-width: 800px) {
+  #Swiper img {
+    height: 300px !important;
+  }
+
+  .branch.container h5 {
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  #HeaderContainer .img-con {
+    padding: 0px !important;
+  }
+
+  .Services {
+    margin-top: 100px !important;
+  }
+  .Services img {
+    height: 300px;
+    object-fit: cover;
+  }
+
+  #Swiper h2 {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  #Swiper .content {
+    overflow: hidden;
+    max-height: 190px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  #BranchContainer .background {
+    height: unset !important;
+  }
+  #BranchContainer #Swiper {
+    height: unset !important;
+  }
+  #BranchContainer #Swiper img {
+    width: unset !important;
+    height: 300px !important;
+  }
+  #BranchContainer .feature-con {
+    display: none !important;
+  }
+  #BranchContainer .branch .row {
+    height: unset !important;
+  }
+  #BranchContainer .branch .row:nth-child(odd) {
+    display: flex !important;
+    flex-direction: column-reverse !important;
+  }
+
+  .news-content img {
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

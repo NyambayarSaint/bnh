@@ -16,7 +16,6 @@ export class NewsOther extends Component {
    }
 
    render() {
-      console.log(this.props, 'zam')
       return (
             <Col md={4} >
             <Row style={{marginTop:78}}>
@@ -30,9 +29,12 @@ export class NewsOther extends Component {
 
             <div className="newsScroll">
                {this.state.news.map((el, i) => {
+                  let date = new Date(el.createdAt)
+                  let month = date.getMonth() +1
+                  let originalDate = date.getFullYear() + ' оны ' + month + '-р сарын ' + date.getDate() + '-ны өдөр'
                   return <div key={i} >
                      <Row className="smNews">
-                        <NavLink to={`/news-posts?Slug=${el.Slug}`}>
+                        <a href={`/#/news-posts?Slug=${el.Slug}`} onClick={()=>{document.location.replace(`/#/news-posts?Slug=${el.Slug}`);document.location.reload()}}>
                            <Col md={4} sm={4} xs={4} className="dad">
                               <img src={`http://66.181.166.84:1338${el.Image.url}`} />
                            </Col>
@@ -40,9 +42,9 @@ export class NewsOther extends Component {
                               <h4 className="p">
                                  {el.Title}
                               </h4>
-                              <p className="date">{new Date(el.createdAt).toISOString()}</p>
+                              <p className="date">{originalDate}</p>
                            </Col>
-                        </NavLink>
+                        </a>
                      </Row>
                   </div>
                })}

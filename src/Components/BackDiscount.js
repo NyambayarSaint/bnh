@@ -19,7 +19,6 @@ class BackDiscount extends Component {
    }
    componentDidMount() {
       axios.get("http://66.181.166.84:1338/discounts").then((response) => {
-         console.log(response, "heheh");
          this.setState({
             // title : response.data.title,
             // desc : response.data.description,

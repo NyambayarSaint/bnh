@@ -29,7 +29,6 @@ export class HeaderContainer extends Component {
             logoP : resp.data
          })
       }) 
-      console.log(this.state.open, 'state')
    }
 
    render() {

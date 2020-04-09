@@ -26,7 +26,6 @@ class FormContainer extends Component {
     _handleSubmit = (e) => {
         e.preventDefault();
         // TODO: do something with -> this.state.file
-        console.log('handle uploading-', this.state);
     }
 
     handleDate = date => {
@@ -70,12 +69,7 @@ class FormContainer extends Component {
         experience.splice(i, 1);
         this.setState({ experience });
     }
-    componentDidUpdate() {
-        console.log(this.check(), 'updated')
-        console.log(this.state)
-    }
     componentDidMount() {
-        console.log(this.check(), 'mounted')
         this.forceStateProperties();
     }
     forceStateProperties() {

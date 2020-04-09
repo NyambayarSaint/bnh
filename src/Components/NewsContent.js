@@ -19,7 +19,9 @@ class NewsContent extends Component {
     }
 
     render() {
-        console.log(this.props, 'poroops')
+        let date = new Date(this.state.news.createdAt)
+        let month = date.getMonth() +1
+        let originalDate = date.getFullYear() + ' оны ' + month + '-р сарын ' + date.getDate() + '-ны өдөр'
         if (this.state.news.notYet) {
             return (
                 <Col md={8}>
@@ -38,16 +40,14 @@ class NewsContent extends Component {
         return (
             <Col md={8}>
                 <div className="image">
-                     <h3 className="tilt">{this.state.news.Title}</h3>
-                    <p className="date">{new Date(this.state.news.createdAt).toISOString()}</p>
+                    <h3 className="tilt">{this.state.news.Title}</h3>
+                    <p className="date" style={{marginBottom:5}}>{originalDate}</p>
 
                     <div className="tiltLine"></div>
                     <img className="this" src={`http://66.181.166.84:1338${this.state.news.Image.url}`} />
                 </div>
-                <div className="big">
-                    <p>
-                        <Markdown source={this.state.news.Content} />
-                    </p>
+                <div className="big news-content">
+                    <Markdown source={this.state.news.Content} />
                 </div>
             </Col>
         )

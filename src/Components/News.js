@@ -17,7 +17,6 @@ class News extends Component {
 
 
     render() {
-        console.log(this.state.news,'hehehehehegwgwegweegw')
         return (
             <Container className="news" style={{ marginTop: 150, marginBottom: 70 }}>
                 <Row style={{ paddingBottom: '40px' }}>

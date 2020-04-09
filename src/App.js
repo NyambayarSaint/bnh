@@ -1,7 +1,7 @@
 import React from "react";
 import "./Style/style.css";
 import HeaderContainer from "./Containers/HeaderContainer";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { HashRouter, Route, Switch } from "react-router-dom";
 import HomeContainer from "./Containers/HomeContainer";
 import FormContainer from "./Containers/FormContainer";
 import { CSSTransition } from "react-transition-group";
@@ -52,13 +52,9 @@ const menu = [
    },
 ];
 
-axios.get("http://localhost:1337/articles").then((response) => {
-   console.log(response, "heey");
-});
-
 function App() {
    return (
-      <BrowserRouter>
+      <HashRouter>
          <div className="App">
             <HeaderContainer data={menu} />
             <div style={{ position: "relative" }}>
@@ -76,7 +72,7 @@ function App() {
             </div>
          </div>
          <Footer data={menu} />
-      </BrowserRouter>
+      </HashRouter>
    );
 }
 

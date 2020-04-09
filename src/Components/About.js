@@ -12,7 +12,6 @@ class About extends Component {
 
     componentWillMount() {
         axios.get('http://66.181.166.84:1338/about-history').then((response) => {
-            console.log(response, 'response');
             this.setState({
                 h1: response.data.Title,
                 desc: response.data.Description
@@ -20,7 +19,6 @@ class About extends Component {
         })
 
         axios.get('http://66.181.166.84:1338/about-timelines').then((response) => {
-            console.log(response, 'response');
             this.setState({
                 histories: response.data
             })
@@ -31,7 +29,7 @@ class About extends Component {
         return (
             <Container fluid id="About-con">
                 <Row>
-                    <Col md={6}>
+                    <Col md={5}>
                         <div className="leftside">
                             <h1>{this.state.h1}</h1>
 
@@ -40,13 +38,13 @@ class About extends Component {
                             <p>{this.state.desc}</p>
                         </div>
                     </Col>
-                    <Col md={6}>
+                    <Col md={7}>
                         <div className="rightside">
 
                             {this.state.histories.map((el, i) => {
                                 return <div key={i}>
                                     <img src={`http://66.181.166.84:1338${el.Image.url}`} />
-                                    <h5>{el.Title}</h5>
+                                    <h5 style={{fontWeight: 'bold', marginTop: 10}}>{el.Title}</h5>
                                     <p>{el.Description}</p>
                                 </div>
                             })}

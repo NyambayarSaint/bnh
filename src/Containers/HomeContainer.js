@@ -7,9 +7,6 @@ import Branchs from '../Components/Branchs'
 import OverVision from '../Components/OverVision'
 import OurTeam from '../Components/OurTeam'
 import News from '../Components/News'
-import BBHotel from '../Components/BBHotel'
-import BBKaraoke from '../Components/BBKaraoke'
-import BBClub from '../Components/BBClub'
 
 class HomeContainer extends Component {
 

@@ -5,6 +5,7 @@ $myFontColor : #222222;
 body{
     color: $myFontColor;
     height: 100%;
+    overflow-x: hidden !important;
 }
  
 // $myFontColor : #1a3f86;
@@ -601,9 +602,9 @@ body{
 
     .lines {
         float: right;
-        height: 3px;
+        height: 1px;
         width: 100%;
-        background-color: #051539;
+        background-color: rgba(0,0,0,0.1);
     }
 
     .smNews {
@@ -926,6 +927,47 @@ body{
             }
         }
     }
+
+    .icons-conn{
+        display: flex;
+        justify-content: space-evenly;
+        margin-bottom: 20px;
+        svg{
+            margin:0px !important
+        }
+    }
+    .mobil-p{
+        padding:0px !important;
+        margin:0px auto !important;
+        padding-top: 20px;
+        text-align: center;
+    }
+    .bnh-text{
+        padding: 0px !important;
+        margin:0px auto !important;
+        width: 100%;
+    }
+    .Flogo{
+        padding:0px !important;
+        margin:0px !important;
+        img{
+            text-align: center;
+        }
+    }
+    .footer{
+        .right{
+            .we{
+                padding: 0px !important;
+                text-align: center;
+                margin-bottom: 20px;
+                svg{
+                    display: block;
+                    margin:0px auto !important;
+                }
+            }
+        }
+    }
+
   }
 
 
@@ -1519,14 +1561,73 @@ body{
         }
     }
 
-
+.news-content{
+    img{
+        width: 100%;
+        margin-left: -30px;
+    }
+}
     @media only screen and (max-width: 800px) {
-        .BackService{
-            .borders{
-                .this{
-                    img{
-                    }
+        #Swiper{
+            img{
+                height: 300px !important;
+            }
+        }
+        .branch.container{
+            h5{
+                font-size: 15px;
+                font-weight: bold;
+            }
+        }
+        #HeaderContainer{
+            .img-con{
+                padding:0px !important;
+            }
+        }
+        .Services {
+            margin-top: 100px !important;
+            img{
+                height: 300px;
+                object-fit: cover;
+            }
+        }
+        #Swiper{
+            h2{
+                font-size: 16px;
+                font-weight: bold;
+            }
+            .content{
+                overflow: hidden;
+                max-height: 190px;
+                margin-bottom: 30px;
+                text-align: center;
+            }
+        }
+        #BranchContainer{
+            .background{
+                height: unset !important;
+            }
+            #Swiper{
+                height: unset !important;
+                img{
+                    width: unset !important;
+                    height: 300px !important;
                 }
+            }
+            .feature-con{
+                display: none !important;
+            }
+            .branch .row{
+                height: unset !important;
+                &:nth-child(odd){
+                    display: flex !important;
+                    flex-direction: column-reverse !important;
+                }
+            }
+        }
+        .news-content{
+            img{
+                width: 100%;
             }
         }
     }

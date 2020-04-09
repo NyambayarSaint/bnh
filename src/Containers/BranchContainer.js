@@ -23,13 +23,11 @@ class Service extends Component {
 
     componentWillMount() {
         axios.get(`http://66.181.166.84:1338/services${this.props.location.search}`).then((Response) => {
-            console.log(Response, 'hahaha')
             this.setState({ data: Response.data[0] })
         });
     }
 
     render() {
-        console.log(this.props);
         if (this.state.data.notYet) {
             return <div></div>
         }
