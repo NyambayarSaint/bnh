@@ -50,7 +50,7 @@ class Footer extends Component {
 
 
                   <Col md={3} sm={12} className="branchs">
-                     <h5>Branchs</h5>
+                     <h5>Манай салбарууд</h5>
                      <div className="line"></div>
                      {this.state.branchs.map((el, i) => {
                         return (

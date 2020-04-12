@@ -20,7 +20,7 @@ class Services extends Component {
             <Container className="Services" style={{ marginTop: '150px', marginBottom: '100px' }}>
                 <Row className="title">
                     <Col>
-                        <h2>Our Services</h2>
+                        <h2>Үйлчилгээ</h2>
                     </Col>
                 </Row>
                 <Row>

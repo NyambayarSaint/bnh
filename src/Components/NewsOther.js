@@ -21,7 +21,7 @@ export class NewsOther extends Component {
             <Row style={{marginTop:78}}>
                <Col>
                   <div>
-                     <p className="Stitle">LATEST NEWS</p>
+                     <p className="Stitle">Сүүлийн мэдээ</p>
                      <div className="lines"></div>
                   </div>
                </Col>

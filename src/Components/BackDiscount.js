@@ -38,7 +38,7 @@ class BackDiscount extends Component {
          >
             <Row className="Title">
                <Col>
-                  <h1>Discount</h1>
+                  <h1>Урамшуулал</h1>
                </Col>
             </Row>
 

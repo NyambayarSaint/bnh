@@ -24,7 +24,7 @@ class Branchs extends Component {
          >
             <Row style={{ paddingBottom: 40, textAlign: "center" }}>
                <Col>
-                  <h2>Branch</h2>
+                  <h2>Манай салбарууд</h2>
                </Col>
             </Row>
             <Row style={{justifyContent:'center'}}>

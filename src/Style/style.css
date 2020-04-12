@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   color: #222222;
   height: 100%;
@@ -30,7 +31,7 @@ body {
   overflow: hidden;
   margin-bottom: 0px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 #HeaderContainer ul a {
   position: relative;
@@ -652,72 +653,6 @@ body {
   margin-bottom: 2vw;
   margin-top: 2vw;
 }
-#About-con .rightside {
-  padding-left: 4vw;
-  padding-right: 4vw;
-  padding-top: 2vw;
-  overflow: hidden;
-  height: calc(100vh - 125px);
-  overflow-y: scroll;
-}
-#About-con .rightside div {
-  width: 100%;
-  position: relative;
-}
-#About-con .rightside div h5 {
-  font-size: 1.7vw;
-  font-family: "Montserrat";
-}
-#About-con .rightside div img {
-  width: 55%;
-}
-#About-con .rightside div:nth-child(odd) {
-  float: left;
-  padding-right: calc(50% + 2vw);
-  text-align: right;
-}
-#About-con .rightside div:nth-child(odd):after {
-  content: "";
-  width: 2px;
-  height: 100%;
-  background: black;
-  position: absolute;
-  top: 0;
-  right: calc(50% - 2px);
-}
-#About-con .rightside div:nth-child(odd):before {
-  content: "";
-  border-radius: 100%;
-  width: 8px;
-  height: 8px;
-  position: absolute;
-  background-color: black;
-  top: 50%;
-  right: calc(50% - 4px);
-}
-#About-con .rightside div:nth-child(even) {
-  float: right;
-  padding-left: calc(50% + 2vw);
-}
-#About-con .rightside div:nth-child(even):after {
-  content: "";
-  width: 2px;
-  height: 100%;
-  background: black;
-  position: absolute;
-  top: 0;
-  left: 50%;
-}
-#About-con .rightside div:nth-child(even):before {
-  content: "";
-  border-radius: 100%;
-  width: 8px;
-  height: 8px;
-  position: absolute;
-  background-color: black;
-  top: 50%;
-  left: calc(50% - 3px);
-}
 
 @media only screen and (max-width: 800px) {
   #About-con .rightside div h5 {
@@ -948,11 +883,15 @@ body {
 }
 #BranchContainer .branch .row .back .overflow .content {
   overflow: hidden;
+  overflow-y: scroll;
   height: 100%;
   color: white;
+  max-height: 500px;
+  display: block !important;
 }
 #BranchContainer .branch .row .back .overflow .content h2 {
   margin-bottom: 25px;
+  text-align: center;
 }
 #BranchContainer .branch .row .back .overflow .content .feature-con {
   display: flex;
@@ -968,13 +907,21 @@ body {
 #BranchContainer .branch .row .back .overflow .content .feature-con .feature div {
   margin-bottom: 15px;
 }
-#BranchContainer .branch .row .back .overflow .content .feature-con .feature div svg, #BranchContainer .branch .row .back .overflow .content .feature-con .feature div img {
+#BranchContainer .branch .row .back .overflow .content .feature-con .feature div svg,
+#BranchContainer .branch .row .back .overflow .content .feature-con .feature div img {
   display: block;
   margin: 0px auto;
   width: 35px;
   height: 35px;
   font-size: 35px;
   text-align: center;
+}
+#BranchContainer .branch .row .back .overflow .content .map-con {
+  width: 100%;
+  height: 260px;
+}
+#BranchContainer .branch .row .back .overflow .content .map-con img {
+  width: 100%;
 }
 #BranchContainer .branch .row .col-md-6 {
   flex-direction: column;
@@ -1327,6 +1274,98 @@ body {
   .news-content img {
     width: 100%;
   }
+}
+#About-con #Rp {
+  display: flex;
+  align-items: center;
+}
+#About-con #Rp .rightside {
+  height: 80vh;
+  overflow-y: scroll;
+}
+#About-con #Rp .rightside .timeline {
+  width: 100%;
+  max-width: 800px;
+  background: #fff;
+  padding: 100px 50px;
+  position: relative;
+}
+#About-con #Rp .rightside .timeline:before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: calc(33% + 15px);
+  bottom: 0px;
+  width: 4px;
+  background: #ddd;
+}
+#About-con #Rp .rightside .timeline:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#About-con #Rp .rightside .entry {
+  clear: both;
+  text-align: left;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  margin-bottom: 75px;
+}
+#About-con #Rp .rightside .entry .title {
+  margin-bottom: 0.5em;
+  float: left;
+  width: 33%;
+  padding-right: 30px;
+  text-align: right;
+  position: relative;
+}
+#About-con #Rp .rightside .entry .title:before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border: 4px solid rgba(0, 0, 0, 0.6);
+  background-color: #fff;
+  border-radius: 100%;
+  top: 15%;
+  right: -4px;
+  z-index: 99;
+}
+#About-con #Rp .rightside .entry .title h3 {
+  margin: 0;
+  font-size: 120%;
+  padding-left: 30px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+#About-con #Rp .rightside .entry .title img {
+  width: 100px;
+  padding: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+}
+#About-con #Rp .rightside .entry .body {
+  float: right;
+  width: 66%;
+  padding-left: 30px;
+}
+#About-con #Rp .rightside .entry .body p {
+  line-height: 1.4em;
+}
+#About-con #Rp .rightside .entry .body p:first-child {
+  margin-top: 0;
+  font-weight: 400;
+}
+#About-con #Rp .rightside .entry .body ul {
+  color: #aaa;
+  padding-left: 0;
+  list-style-type: none;
+}
+#About-con #Rp .rightside .entry .body ul li:before {
+  content: "–";
+  margin-right: 0.5em;
 }
 
 /*# sourceMappingURL=style.css.map */

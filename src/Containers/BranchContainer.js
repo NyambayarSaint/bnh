@@ -7,6 +7,8 @@ import { IoIosMan } from 'react-icons/io'
 import { FaQuoteRight, FaQuoteLeft } from 'react-icons/fa'
 import { withRouter } from 'react-router-dom'
 import Markdown from 'react-markdown'
+import GoogleMapReact from 'google-map-react';
+import SimpleMap from '../Components/ReactMap';
 
 class Service extends Component {
 
@@ -61,16 +63,13 @@ class Service extends Component {
                                         <div className="overflow">
                                             <div className="content justify-content-center align-items-center d-flex flex-column">
                                                 <h2>{el.Name}</h2>
-                                                <p>{el.Description ? el.Description : null}</p>
-                                                <div className="feature-con">
-                                                    {el.Features.map((feature, k) => {
-                                                        return (
-                                                            <div className="feature" key={k}>
-                                                                <div><img src={`http://66.181.166.84:1338${feature.Icon_Image.url}`} /></div>
-                                                                <p>{feature.Description}</p>
-                                                            </div>
-                                                        )
-                                                    })}
+                                                <div className="richtext">{el.Description ? <Markdown source={el.Description} /> : null}</div>
+                                                <div className="map-con">
+                                                    {el.GoogleMap == "" ?
+                                                        el.GoogleMap == "" ? <img src={`http://66.181.166.84:1338${el.LocationImage.url}`} /> : <div dangerouslySetInnerHTML={createMarkup(el.GoogleMap)} ></div>
+                                                        :
+                                                        <iframe width="100%" height="100%" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;coord=47.9181171, 106.88331314996029&amp;q=%D0%90%D0%BC%D1%83%D1%80%20%D0%B7%D0%BE%D1%87%D0%B8%D0%B4%20%D0%B1%D1%83%D1%83%D0%B4%D0%B0%D0%BB+(Manaih)&amp;ie=UTF8&amp;t=&amp;z=17&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.maps.ie/draw-radius-circle-map/">Google Maps Radius</a></iframe>
+                                                    }
                                                 </div>
                                             </div>
                                         </div>
@@ -85,16 +84,13 @@ class Service extends Component {
                                     <div className="overflow">
                                         <div className="content justify-content-center align-items-center d-flex flex-column">
                                             <h2>{el.Name}</h2>
-                                            <p>{el.Description ? el.Description : null}</p>
-                                            <div className="feature-con">
-                                                {el.Features.map((feature, k) => {
-                                                    return (
-                                                        <div className="feature" key={k}>
-                                                            <div><img src={`http://66.181.166.84:1338${feature.Icon_Image.url}`} /></div>
-                                                            <p>{feature.Description}</p>
-                                                        </div>
-                                                    )
-                                                })}
+                                            <div className="richtext">{el.Description ? <Markdown source={el.Description} /> : null}</div>
+                                            <div className="map-con">
+                                                {el.GoogleMap == "" ?
+                                                    <img src={`http://66.181.166.84:1338${el.LocationImage.url}`} />
+                                                    :
+                                                    <div dangerouslySetInnerHTML={createMarkup(el.GoogleMap)} ></div>
+                                                }
                                             </div>
                                         </div>
                                     </div>
@@ -113,3 +109,5 @@ class Service extends Component {
 }
 
 export default withRouter(Service)
+
+function createMarkup(string) { return { __html: `${string}` }; };

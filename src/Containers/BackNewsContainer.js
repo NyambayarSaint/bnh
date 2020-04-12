@@ -15,7 +15,7 @@ class BackNewsContainer extends Component {
          <Container className="inf" style={{marginBottom:"180px", marginTop:80}}>
             <Row className="Title">
                <Col>
-                  <h2>News</h2>
+                  <h2>Мэдээ</h2>
                   <div className="line"></div>
                </Col>
             </Row>

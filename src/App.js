@@ -22,41 +22,60 @@ import Error404 from "./Components/Error404";
 
 const menu = [
    {
+      url: "/contact",
+      name: "Холбоо барих"
+   },
+   {
       url: "/form",
-      name: "Get Hired!"
+      name: "Бидэнтэй нэгдэх!"
    },
    {
       url: "/services",
-      name: "Services"
+      name: "Үйлчилгээ"
    },
    {
       url: "/discount",
-      name: "Discount"
-   },
-   {
-      url: "/contact",
-      name: "Contact"
+      name: "Урамшуулал"
    },
    {
       url: "/news-posts",
-      name: "News"
+      name: "Мэдээ мэдээлэл"
    },
 
    {
       url: "/about",
-      name: "About"
+      name: "Бидний тухай"
    },
    {
       url: "/",
-      name: "Home"
+      name: "Нүүр хуудас"
    },
+];
+
+const menuMain = [ 
+   {
+      url: "/contact",
+      name: "Холбоо барих"
+   },
+   {
+      url: "/services",
+      name: "Үйлчилгээ"
+   }, 
+   {
+      url: "/discount",
+      name: "Урамшуулал"
+   },
+   {
+      url: "/about",
+      name: "Бидний тухай"
+   }
 ];
 
 function App() {
    return (
       <HashRouter>
          <div className="App">
-            <HeaderContainer data={menu} />
+            <HeaderContainer data={menuMain} />
             <div style={{ position: "relative" }}>
                <Switch>
                   <Route path="/" exact component={HomeContainer} />
