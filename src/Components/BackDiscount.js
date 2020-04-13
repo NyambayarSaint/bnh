@@ -22,7 +22,7 @@ class BackDiscount extends Component {
          this.setState({
             // title : response.data.title,
             // desc : response.data.description,
-            // date : response.data.date,
+            // date : response.data.date, 
 
             discount: response.data
          });
